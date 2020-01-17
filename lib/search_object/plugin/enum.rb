@@ -34,7 +34,7 @@ module SearchObject
 
           return handle_invalid_value(object: object, option: option, enums: enums, scope: scope, value: value) unless enums.include? value.to_s
 
-          object.send("apply_#{Helper.underscore(option)}_with_#{Helper.underscore(value)}", scope)
+          object.send("apply_#{Helper.underscore(option)}", scope)
         end
 
         def handle_invalid_value(object:, option:, enums:, scope:, value:)
